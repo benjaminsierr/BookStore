@@ -2,4 +2,52 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Bookstore</h1>
+@model IQueryable<Book>
+    <nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Narnes & Boble</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="active nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a  class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="jumbotron text-center p-0 m-0 bg-dark">
+    <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1612385764381-87816a4b2208?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" />
+</div>
+<table class="table table-dark">
+    <thead>
+        <tr>
+
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Classification/Category</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td scope="row">@x.Title</td>
+            <td>@x.Author</td>
+            <td>@x.Publisher</td>
+            <td>@x.ISBN</td>
+            <td>@x.Category</td>
+            <td>$@x.Price</td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<footer class="bg-dark text-center text-lg-start">
+    <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-light" href="https://bit.ly/1NbiVPe">Narnes & Boble</a>
+    </div>
+</footer>

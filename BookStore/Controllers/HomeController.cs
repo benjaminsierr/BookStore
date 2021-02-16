@@ -14,7 +14,7 @@ namespace BookStore.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private BookStoreRepository _repository;
-        public HomeController(ILogger<HomeController> logger,BookStoreRepository repository)
+        public HomeController(ILogger<HomeController> logger,BookStoreRepository repository) 
         {
             _logger = logger;
             _repository = repository;

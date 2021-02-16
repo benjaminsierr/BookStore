@@ -27,7 +27,15 @@ namespace BookStore.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            if(ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

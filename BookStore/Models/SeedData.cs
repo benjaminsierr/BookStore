@@ -29,7 +29,7 @@ namespace BookStore.Models
                         Title = "Les Miserables",
                         Author = "Victor Hugo",
                         Publisher = "Signet",
-                        ISBN = 9780451419439,
+                        ISBN = "978-0451419439",
                         Fiction = true,
                         Category = "Classic",
                         Price = 9.95
@@ -40,7 +40,7 @@ namespace BookStore.Models
                         Title = "Team of Rivals",
                         Author = "Doris Kearns Goodwin",
                         Publisher = "Smin & Schuster",
-                        ISBN = 9780743270755,
+                        ISBN = "978-0743270755",
                         Fiction = false,
                         Category = "Biography",
                         Price = 14.58
@@ -51,7 +51,7 @@ namespace BookStore.Models
                         Title = "The Snowball",
                         Author = "Alice Schroeder",
                         Publisher = "Bantam",
-                        ISBN = 9780553384611,
+                        ISBN = "978-0553384611",
                         Fiction = false,
                         Category = "Biography",
                         Price = 21.54
@@ -62,7 +62,7 @@ namespace BookStore.Models
                         Title = "American Ulysses",
                         Author = "Ronald C. White",
                         Publisher = "Random House",
-                        ISBN = 9780812981254,
+                        ISBN = "978-0812981254",
                         Fiction = false,
                         Category = "Biography",
                         Price = 11.61
@@ -73,7 +73,7 @@ namespace BookStore.Models
                         Title = "Unbroken",
                         Author = "Laura Hillenbrand",
                         Publisher = "Random House",
-                        ISBN = 9780743270755,
+                        ISBN = "978-0743270755",
                         Fiction = false,
                         Category = "Biography",
                         Price = 13.33
@@ -84,7 +84,7 @@ namespace BookStore.Models
                         Title = "The Great Train Robbery",
                         Author = "Michael Crichton",
                         Publisher = "Vintage",
-                        ISBN = 9780804171281,
+                        ISBN = "978-0804171281",
                         Fiction = true,
                         Category = "Historical Fiction",
                         Price = 15.95
@@ -95,7 +95,7 @@ namespace BookStore.Models
                         Title = "Deep Work",
                         Author = "Cal Newport",
                         Publisher = "Grand Central Publishing",
-                        ISBN = 9781455586691,
+                        ISBN = "978-1455586691",
                         Fiction = false,
                         Category = "Self-Help",
                         Price = 14.99
@@ -106,7 +106,7 @@ namespace BookStore.Models
                         Title = "It's Your Ship",
                         Author = "Cal Newport",
                         Publisher = "Grand Publishing Station",
-                        ISBN = 978-1455523023,
+                        ISBN = "978-1455523023",
                         Fiction = false,
                         Category = "Self-Help",
                         Price = 21.66
@@ -117,7 +117,7 @@ namespace BookStore.Models
                         Title = "The Virgin Way",
                         Author = "Richard Branson",
                         Publisher = "Portfolio",
-                        ISBN = 9781591847984,
+                        ISBN = "978-1591847984",
                         Fiction = false,
                         Category = "Business",
                         Price = 14.58
@@ -128,7 +128,7 @@ namespace BookStore.Models
                         Title = "Team of Rivals",
                         Author = "Doris Kearns Goodwin",
                         Publisher = "Smin & Schuster",
-                        ISBN = 9780743270755,
+                        ISBN = "978-0743270755",
                         Fiction = true,
                         Category = "Thrillers",
                         Price = 14.58

@@ -14,7 +14,9 @@ namespace BookStore.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
+        public string AuthorFirstName { get; set; }
+        public string AuthorMiddleName { get; set; }
+        public string AuthorLastName { get; set; }
         [Required]
         [RegularExpression(@"^\d{3}-{1}\d{10}$")]
         public string ISBN { get; set; }

@@ -36,7 +36,14 @@
         {
         <tr>
             <td scope="row">@x.Title</td>
-            <td>@x.Author</td>
+            @if (x.AuthorMiddleName == "")
+            {
+                <td>@x.AuthorFirstName @x.AuthorLastName</td>
+            }
+            else
+            {
+                <td>@x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName</td>
+            }
             <td>@x.Publisher</td>
             <td>@x.ISBN</td>
             @if (x.Fiction)
@@ -44,7 +51,7 @@
                 <td>Fiction</td>
             }
             else
-            { 
+            {
                 <td>Non-Fiction</td>
             }
             <td>@x.Category</td>

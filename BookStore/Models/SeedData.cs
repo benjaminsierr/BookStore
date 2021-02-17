@@ -27,7 +27,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "Les Miserables",
-                        Author = "Victor Hugo",
+                        AuthorFirstName = "Victor",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
                         Fiction = true,
@@ -38,7 +40,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "Team of Rivals",
-                        Author = "Doris Kearns Goodwin",
+                        AuthorFirstName = "Doris",
+                        AuthorMiddleName = "Kearns",
+                        AuthorLastName = "Goodwin",
                         Publisher = "Smin & Schuster",
                         ISBN = "978-0743270755",
                         Fiction = false,
@@ -49,7 +53,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "The Snowball",
-                        Author = "Alice Schroeder",
+                        AuthorFirstName = "Alice",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Schroeder",
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
                         Fiction = false,
@@ -60,7 +66,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "American Ulysses",
-                        Author = "Ronald C. White",
+                        AuthorFirstName = "Ronald",
+                        AuthorMiddleName = "C.",
+                        AuthorLastName = "White",
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
                         Fiction = false,
@@ -71,7 +79,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "Unbroken",
-                        Author = "Laura Hillenbrand",
+                        AuthorFirstName = "Laura",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Hillenbrand",
                         Publisher = "Random House",
                         ISBN = "978-0743270755",
                         Fiction = false,
@@ -82,7 +92,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "The Great Train Robbery",
-                        Author = "Michael Crichton",
+                        AuthorFirstName = "Michael",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Crichton",
                         Publisher = "Vintage",
                         ISBN = "978-0804171281",
                         Fiction = true,
@@ -93,7 +105,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "Deep Work",
-                        Author = "Cal Newport",
+                        AuthorFirstName = "Cal",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Newport",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455586691",
                         Fiction = false,
@@ -104,7 +118,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "It's Your Ship",
-                        Author = "Cal Newport",
+                        AuthorFirstName = "Cal",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Newport",
                         Publisher = "Grand Publishing Station",
                         ISBN = "978-1455523023",
                         Fiction = false,
@@ -115,7 +131,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "The Virgin Way",
-                        Author = "Richard Branson",
+                        AuthorFirstName = "Richard",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Branson",
                         Publisher = "Portfolio",
                         ISBN = "978-1591847984",
                         Fiction = false,
@@ -126,7 +144,9 @@ namespace BookStore.Models
                     new Book
                     {
                         Title = "Team of Rivals",
-                        Author = "Doris Kearns Goodwin",
+                        AuthorFirstName = "Doris",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Kearns",
                         Publisher = "Smin & Schuster",
                         ISBN = "978-0743270755",
                         Fiction = true,

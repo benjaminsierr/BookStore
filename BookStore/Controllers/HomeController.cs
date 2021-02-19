@@ -14,15 +14,22 @@ namespace BookStore.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private BookStoreRepository _repository;
+
+        public int ItemsPerPage = 5;
         public HomeController(ILogger<HomeController> logger,BookStoreRepository repository) 
         {
             _logger = logger;
             _repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_repository.Books);
+
+            return View(_repository.Books
+                .OrderBy(b => b.BookId)
+                .Skip((page - 1) * ItemsPerPage)
+                .Take(ItemsPerPage)
+                );
         }
 
         public IActionResult Privacy()

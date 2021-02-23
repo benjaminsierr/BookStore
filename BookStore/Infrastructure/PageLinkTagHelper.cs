@@ -28,7 +28,7 @@ namespace BookStore.Infrastructure
 
         public string PageAction { get; set; }
 
-        //overriding
+        //overriding and build tags
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
@@ -41,7 +41,10 @@ namespace BookStore.Infrastructure
                 TagBuilder tag = new TagBuilder("a");
                 tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
                 tag.InnerHtml.Append(i.ToString());
+
+                result.InnerHtml.AppendHtml(tag);
             }
+            output.Content.AppendHtml(result.InnerHtml);
         }
 
     }

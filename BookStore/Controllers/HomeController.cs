@@ -6,16 +6,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Models.ViewModels;
 
 namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
+        //set global variables
         private readonly ILogger<HomeController> _logger;
 
         private BookStoreRepository _repository;
 
-        public int ItemsPerPage = 5;
+        public int PageSize = 5;
         public HomeController(ILogger<HomeController> logger,BookStoreRepository repository) 
         {
             _logger = logger;
@@ -24,12 +26,21 @@ namespace BookStore.Controllers
 
         public IActionResult Index(int page = 1)
         {
-
-            return View(_repository.Books
+            //return a Booklist view model with the list of books and paginginfo
+            return View(new BookList
+            {
+                Books = _repository.Books
                 .OrderBy(b => b.BookId)
-                .Skip((page - 1) * ItemsPerPage)
-                .Take(ItemsPerPage)
-                );
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+                ,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _repository.Books.Count()
+                }
+            });
         }
 
         public IActionResult Privacy()

@@ -163,6 +163,48 @@ namespace BookStore.Models
                         Category = "Thrillers",
                         Price = 14.58,
                         Pages = 944
+                    },
+
+                    new Book
+                    {
+                        Title = "The Lean Startup",
+                        AuthorFirstName = "Eric",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Ries",
+                        Publisher = "Crown Publishing Group",
+                        ISBN = "978-0307887898",
+                        Fiction = false,
+                        Category = "Business",
+                        Price = 14.50,
+                        Pages = 336
+                    },
+
+                    new Book
+                    {
+                        Title = "Moby Dick",
+                        AuthorFirstName = "Herman",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Melville",
+                        Publisher = "Richard Bently",
+                        ISBN = "978-80140861723",
+                        Fiction = true,
+                        Category = "Epic",
+                        Price = 12.13,
+                        Pages = 752
+                    },
+
+                    new Book
+                    {
+                        Title = "Don Quixote",
+                        AuthorFirstName = "Miguel",
+                        AuthorMiddleName = "de",
+                        AuthorLastName = "Cervantes",
+                        Publisher = "Penguin Classics",
+                        ISBN = "978-1400132171",
+                        Fiction = true,
+                        Category = "Satire",
+                        Price = 15.30,
+                        Pages = 863
                     }
 
                     );

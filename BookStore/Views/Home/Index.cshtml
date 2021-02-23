@@ -2,67 +2,64 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<Book>
-    <nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Narnes & Boble</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="active nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a  class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+
+@model BookList
+<nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Narnes & Boble</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="active nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 <div class="jumbotron text-center p-0 m-0 bg-dark">
     <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1612385764381-87816a4b2208?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" />
 </div>
-<table class="table table-dark">
-    <thead>
-        <tr>
-
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Publisher</th>
-            <th scope="col">ISBN</th>
-            <th scope="col">Classification</th>
-            <th scope="col">Category</th>
-            <th scope="col">Price</th>
-            <th scope="col">Pages</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var x in Model)
-        {
-        <tr>
-            <td scope="row">@x.Title</td>
-            @if (x.AuthorMiddleName == "")
-            {
-                <td>@x.AuthorFirstName @x.AuthorLastName</td>
-            }
-            else
-            {
-                <td>@x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName</td>
-            }
-            <td>@x.Publisher</td>
-            <td>@x.ISBN</td>
-            @if (x.Fiction)
-            {
-                <td>Fiction</td>
-            }
-            else
-            {
-                <td>Non-Fiction</td>
-            }
-            <td>@x.Category</td>
-            <td>$@x.Price</td>
-            <td>@x.Pages</td>
-
-        </tr>
-        }
-    </tbody>
-</table>
+<br />
+<br />
+<div class="row justify-content-center">
+    @foreach (var x in Model.Books)
+    {
+        <div class="card m-1" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@x.Title</h5>
+                
+               @if (x.AuthorMiddleName == "")
+                {
+                    <h6 class="card-subtitle mb-2 text-muted">@x.AuthorFirstName @x.AuthorLastName</h6>
+                }
+                else
+                {
+                    <h6 class="card-subtitle mb-2 text-muted">@x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName</h6>
+                }
+                <p class="card-text">
+                    Publisher: @x.Publisher
+                </P>
+                <p>
+                    @if (x.Fiction)
+                    {
+                        <b>Fiction/@x.Category</b>
+                    }
+                    else
+                    {
+                        <b>Non-Fiction/@x.Category</b>
+                    }
+                </p>
+                <p>@x.Pages Pages</p>
+                           
+                <a href="#" class="card-link">@x.ISBN</a>
+                <a href="#" class="card-link">$@x.Price</a>
+            </div>
+        </div>
+    }
+</div>
+<br />
+<br />
+<div page-model="@Model.PagingInfo" page-action="Index" class="active"></div>
 <footer class="bg-dark text-center text-lg-start">
     <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2020 Copyright:

@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@*Index page where data is displayed*@
 
 @model BookList
 <nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
@@ -22,6 +22,7 @@
 <br />
 <br />
 <div class="row justify-content-center">
+    @*output a card for each book on current page*@
     @foreach (var x in Model.Books)
     {
         <div class="card m-1" style="width: 18rem;">
@@ -39,16 +40,16 @@
                 <p class="card-text">
                     Publisher: @x.Publisher
                 </P>
-                <p>
+         
                     @if (x.Fiction)
                     {
-                        <b>Fiction/@x.Category</b>
+                <p class="font-weight-bold">Fiction/@x.Category</p>
                     }
                     else
                     {
-                        <b>Non-Fiction/@x.Category</b>
+                        <p class="font-weight-bold">Non-Fiction/@x.Category</p>
                     }
-                </p>
+            
                 <p>@x.Pages Pages</p>
                            
                 <a href="#" class="card-link">@x.ISBN</a>
@@ -59,6 +60,7 @@
 </div>
 <br />
 <br />
+@*specify classes and output paging div*@
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn m-1"
      page-class-normal="btn-outline-light"
      page-class-selected="btn-primary"></div>

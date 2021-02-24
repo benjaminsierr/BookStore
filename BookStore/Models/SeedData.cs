@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+//load records on database upon building it
 namespace BookStore.Models
 {
     public class SeedData

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+//model for books
 namespace BookStore.Models
 {
     public class Book
@@ -18,6 +18,7 @@ namespace BookStore.Models
         public string AuthorMiddleName { get; set; }
         public string AuthorLastName { get; set; }
         [Required]
+        //restrict isbn to correct format
         [RegularExpression(@"^\d{3}-{1}\d{10}$")]
         public string ISBN { get; set; }
         [Required]

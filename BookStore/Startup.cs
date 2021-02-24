@@ -58,6 +58,7 @@ namespace BookStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    //specify route so url is simplified to /P2, /P3, etc
                     "pagination",
                     "P{page}",
                     new { Controller = "Home", action = "Index" });

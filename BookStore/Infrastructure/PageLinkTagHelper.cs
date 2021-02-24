@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+//set up tag helper
 namespace BookStore.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-model")]
@@ -27,7 +27,7 @@ namespace BookStore.Infrastructure
         public PagingInfo PageModel { get; set; }
 
         public string PageAction { get; set; }
-
+        //set up tag helper class distinctions
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -46,7 +46,7 @@ namespace BookStore.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
-                
+                //specifies which page is selected and returns info to view
                 if (PageClassesEnabled)
                 {
                     tag.AddCssClass(PageClass);

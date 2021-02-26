@@ -25,37 +25,7 @@
     @*output a card for each book on current page*@
     @foreach (var x in Model.Books)
     {
-        <div class="card m-1" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">@x.Title</h5>
-                
-               @if (x.AuthorMiddleName == "")
-                {
-                    <h6 class="card-subtitle mb-2 text-muted">@x.AuthorFirstName @x.AuthorLastName</h6>
-                }
-                else
-                {
-                    <h6 class="card-subtitle mb-2 text-muted">@x.AuthorFirstName @x.AuthorMiddleName @x.AuthorLastName</h6>
-                }
-                <p class="card-text">
-                    Publisher: @x.Publisher
-                </P>
-         
-                    @if (x.Fiction)
-                    {
-                <p class="font-weight-bold">Fiction/@x.Category</p>
-                    }
-                    else
-                    {
-                        <p class="font-weight-bold">Non-Fiction/@x.Category</p>
-                    }
-            
-                <p>@x.Pages Pages</p>
-                           
-                <a href="#" class="card-link">@x.ISBN</a>
-                <a href="#" class="card-link">$@x.Price</a>
-            </div>
-        </div>
+        <partial name="BookSummary" model="x" />
     }
 </div>
 <br />

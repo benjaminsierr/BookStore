@@ -57,6 +57,19 @@ namespace BookStore
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoint for specifying category and page
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page}",
+                    new { Controller = "Home", action = "Index" });
+                //endpoint for just a page
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+                //endpoint for just a category
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
                 endpoints.MapControllerRoute(
                     //specify route so url is simplified to /P2, /P3, etc
                     "pagination",

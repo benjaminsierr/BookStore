@@ -24,22 +24,23 @@ namespace BookStore.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             //return a Booklist view model with the list of books and paginginfo
             return View(new BookList
             {
                 Books = _repository.Books
+                .Where(b => category == null || b.Category == category)
                 .OrderBy(b => b.BookId)
                 .Skip((page - 1) * PageSize)
-                .Take(PageSize)
-                ,
+                .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalNumItems = _repository.Books.Count()
-                }
+                },
+                CurrentCategory = category
             });
         }
 

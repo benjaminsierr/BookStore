@@ -27,6 +27,11 @@ namespace BookStore.Infrastructure
         public PagingInfo PageModel { get; set; }
 
         public string PageAction { get; set; }
+
+        //store category
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
+
         //set up tag helper class distinctions
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
@@ -45,7 +50,11 @@ namespace BookStore.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+
+                //use page url values dict
+                PageUrlValues["page"] = i;
+
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
                 //specifies which page is selected and returns info to view
                 if (PageClassesEnabled)
                 {

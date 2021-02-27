@@ -75,6 +75,7 @@ namespace BookStore
                     "pagination",
                     "P{page}",
                     new { Controller = "Home", action = "Index" });
+
                 endpoints.MapDefaultControllerRoute();
             });
 

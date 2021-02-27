@@ -8,8 +8,23 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body class="bg-dark">
-    <div>
+    <nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Narnes & Boble</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Home" asp-route-category="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <vc:navigation-menu></vc:navigation-menu>
+            </ul>
+        </div>
+    </nav>
         @RenderBody()
-    </div>
 </body>
 </html>

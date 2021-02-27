@@ -38,10 +38,12 @@ namespace BookStore.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
+                    //specify page number based on category
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x => x.Category == category).Count()
                 },
                 CurrentCategory = category
-            });
+            }); ;
         }
 
         public IActionResult Privacy()

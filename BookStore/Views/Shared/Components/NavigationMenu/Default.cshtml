@@ -1,0 +1,10 @@
+﻿@model IEnumerable<string>
+
+
+
+@*<li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Home" asp-route-category="">Home</a></li>*@
+@*dynamically build category menu and highlight based on selected category*@
+@foreach (string category in Model)
+{
+    <li class="nav-item @(category == ViewBag.SelectedCategory ? "active" : "")"><a class="nav-link" asp-action="Index" asp-controller="Home" asp-route-category="@category" asp-route-page="1">@category</a></li>
+}

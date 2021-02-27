@@ -4,18 +4,6 @@
 @*Index page where data is displayed*@
 
 @model BookList
-<nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">Narnes & Boble</a>
-    </div>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="active nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-    </div>
-</nav>
 <div class="jumbotron text-center p-0 m-0 bg-dark">
     <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1612385764381-87816a4b2208?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MXwxfDB8MXxyYW5kb218fHx8fHx8fA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" />
 </div>
@@ -33,7 +21,7 @@
 @*specify classes and output paging div*@
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn m-1"
      page-class-normal="btn-outline-light"
-     page-class-selected="btn-primary"></div>
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"></div>
 <footer class="bg-dark text-center text-lg-start">
     <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2020 Copyright:

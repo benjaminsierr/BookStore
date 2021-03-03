@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace BookStore
 {
     public class Startup
@@ -29,7 +30,7 @@ namespace BookStore
 
             services.AddDbContext<BookStoreContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:BookStoreConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:BookStoreConnection"]);
            });
 
             services.AddScoped<BookStoreRepository, EFBookStoreRepository>();

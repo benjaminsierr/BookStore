@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using BookStore.Infrastructure;
-
+//session cart model
 namespace BookStore.Models
 {
     public class SessionCart : Cart

@@ -52,7 +52,7 @@ namespace BookStore.Infrastructure
                 TagBuilder tag = new TagBuilder("a");
 
                 //use page url values dict
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
 
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
                 //specifies which page is selected and returns info to view

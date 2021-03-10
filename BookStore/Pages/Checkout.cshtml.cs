@@ -12,8 +12,8 @@ namespace BookStore.Pages
     public class CheckoutModel : PageModel
     {
         private BookStoreRepository repository;
-
-        public void CartModel(BookStoreRepository repo, Cart cartService)
+        //constructor
+        public CheckoutModel(BookStoreRepository repo, Cart cartService)
         {
             repository = repo;
             Cart = cartService;
@@ -28,7 +28,7 @@ namespace BookStore.Pages
             ReturnUrl = returnUrl ?? "/";
             //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
-
+    /*
         public IActionResult OnPost(long bookid, string returnUrl)
         {
             Book book = repository.Books
@@ -37,21 +37,20 @@ namespace BookStore.Pages
             return RedirectToPage(new { returnUrl = returnUrl });
         }
 
-
-        /*
+        */
             public IActionResult OnPost(long bookId, string returnUrl)
         {
             Book book = repository.Books.FirstOrDefault(b => b.BookId == bookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
             Cart.AddItem(book, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            //HttpContext.Session.SetJson("cart", Cart);
 
             return RedirectToPage( new { returnUrl = returnUrl});
-        }*/
-
+        }
+        //remove from cart action
         public IActionResult OnPostRemove(long bookId, string returnUrl)
         {
             Cart.RemoveLine(Cart.Lines.First(cl =>

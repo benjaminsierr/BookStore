@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - BookStore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/2db6bfd791.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-dark">
     <nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
@@ -23,6 +24,16 @@
             <ul class="navbar-nav mr-auto">
                 <vc:navigation-menu></vc:navigation-menu>
             </ul>
+        </div>
+        <div class="bg-dark text-white p-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col navbar-brand">SPORTS STORE</div>
+                    <div class="col-6 text-right">
+                        <vc:cart-summary />
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
         @RenderBody()

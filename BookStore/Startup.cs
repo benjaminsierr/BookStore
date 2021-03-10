@@ -40,6 +40,7 @@ namespace BookStore
 
             services.AddDistributedMemoryCache();
             services.AddSession();
+            //add cart services
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
@@ -70,21 +71,21 @@ namespace BookStore
             {
                 //endpoint for specifying category and page
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
                 //endpoint for just a page
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
                 //endpoint for just a category
                 endpoints.MapControllerRoute("category",
                     "{category}",
-                    new { Controller = "Home", action = "Index", page = 1 });
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(
                     //specify route so url is simplified to /P2, /P3, etc
                     "pagination",
-                    "P{page}",
+                    "P{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();

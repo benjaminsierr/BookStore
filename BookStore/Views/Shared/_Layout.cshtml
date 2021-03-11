@@ -6,10 +6,36 @@
     <title>@ViewData["Title"] - BookStore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/2db6bfd791.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-dark">
-    <div>
+    <nav class="navbar navbar-default navbar-dark bg-dark navbar-expand-lg">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Narnes & Boble</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" asp-action="Index" asp-controller="Home" asp-route-category="">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <vc:navigation-menu></vc:navigation-menu>
+            </ul>
+        </div>
+        <div class="bg-dark text-white p-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col navbar-brand">SPORTS STORE</div>
+                    <div class="col-6 text-right">
+                        <vc:cart-summary />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
         @RenderBody()
-    </div>
 </body>
 </html>

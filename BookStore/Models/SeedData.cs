@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+//load records on database upon building it
 namespace BookStore.Models
 {
     public class SeedData
@@ -34,7 +34,8 @@ namespace BookStore.Models
                         ISBN = "978-0451419439",
                         Fiction = true,
                         Category = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        Pages = 1488
                     },
 
                     new Book
@@ -47,7 +48,8 @@ namespace BookStore.Models
                         ISBN = "978-0743270755",
                         Fiction = false,
                         Category = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 944
                     },
 
                     new Book
@@ -60,7 +62,8 @@ namespace BookStore.Models
                         ISBN = "978-0553384611",
                         Fiction = false,
                         Category = "Biography",
-                        Price = 21.54
+                        Price = 21.54,
+                        Pages = 832
                     },
 
                     new Book
@@ -73,7 +76,8 @@ namespace BookStore.Models
                         ISBN = "978-0812981254",
                         Fiction = false,
                         Category = "Biography",
-                        Price = 11.61
+                        Price = 11.61,
+                        Pages = 864
                     },
 
                     new Book
@@ -86,7 +90,8 @@ namespace BookStore.Models
                         ISBN = "978-0743270755",
                         Fiction = false,
                         Category = "Biography",
-                        Price = 13.33
+                        Price = 13.33,
+                        Pages = 528
                     },
 
                     new Book
@@ -99,7 +104,9 @@ namespace BookStore.Models
                         ISBN = "978-0804171281",
                         Fiction = true,
                         Category = "Historical Fiction",
-                        Price = 15.95
+                        Price = 15.95,
+                        Pages = 288
+
                     },
 
                     new Book
@@ -112,7 +119,8 @@ namespace BookStore.Models
                         ISBN = "978-1455586691",
                         Fiction = false,
                         Category = "Self-Help",
-                        Price = 14.99
+                        Price = 14.99,
+                        Pages = 304
                     },
 
                     new Book
@@ -125,7 +133,8 @@ namespace BookStore.Models
                         ISBN = "978-1455523023",
                         Fiction = false,
                         Category = "Self-Help",
-                        Price = 21.66
+                        Price = 21.66,
+                        Pages = 240
                     },
 
                     new Book
@@ -138,12 +147,13 @@ namespace BookStore.Models
                         ISBN = "978-1591847984",
                         Fiction = false,
                         Category = "Business",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 400
                     },
 
                     new Book
                     {
-                        Title = "Team of Rivals",
+                        Title = "Sycamore Row",
                         AuthorFirstName = "Doris",
                         AuthorMiddleName = "",
                         AuthorLastName = "Kearns",
@@ -151,7 +161,50 @@ namespace BookStore.Models
                         ISBN = "978-0743270755",
                         Fiction = true,
                         Category = "Thrillers",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 944
+                    },
+
+                    new Book
+                    {
+                        Title = "The Lean Startup",
+                        AuthorFirstName = "Eric",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Ries",
+                        Publisher = "Crown Publishing Group",
+                        ISBN = "978-0307887898",
+                        Fiction = false,
+                        Category = "Business",
+                        Price = 14.50,
+                        Pages = 336
+                    },
+
+                    new Book
+                    {
+                        Title = "Moby Dick",
+                        AuthorFirstName = "Herman",
+                        AuthorMiddleName = "",
+                        AuthorLastName = "Melville",
+                        Publisher = "Richard Bently",
+                        ISBN = "978-80140861723",
+                        Fiction = true,
+                        Category = "Epic",
+                        Price = 12.13,
+                        Pages = 752
+                    },
+
+                    new Book
+                    {
+                        Title = "Don Quixote",
+                        AuthorFirstName = "Miguel",
+                        AuthorMiddleName = "de",
+                        AuthorLastName = "Cervantes",
+                        Publisher = "Penguin Classics",
+                        ISBN = "978-1400132171",
+                        Fiction = true,
+                        Category = "Satire",
+                        Price = 15.30,
+                        Pages = 863
                     }
 
                     );

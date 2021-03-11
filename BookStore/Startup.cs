@@ -1,7 +1,5 @@
-using BookStore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Models;
+using Microsoft.AspNetCore.Http;
+
 
 namespace BookStore
 {
@@ -21,6 +22,7 @@ namespace BookStore
         }
 
         public IConfiguration Configuration { get; set; }
+        //public object SessionCart { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -29,10 +31,18 @@ namespace BookStore
 
             services.AddDbContext<BookStoreContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:BookStoreConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:BookStoreConnection"]);
            });
 
             services.AddScoped<BookStoreRepository, EFBookStoreRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            //add cart services
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,15 +61,36 @@ namespace BookStore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoint for specifying category and page
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{pageNum:int}",
+                    new { Controller = "Home", action = "Index" });
+                //endpoint for just a page
+                endpoints.MapControllerRoute("page",
+                    "{pageNum:int}",
+                    new { Controller = "Home", action = "Index" });
+                //endpoint for just a category
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
+
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //specify route so url is simplified to /P2, /P3, etc
+                    "pagination",
+                    "P{pageNum}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);

@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=contentwidth"/>
+    <title>hey</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="bg-dark text-white p-2">
+        <a class="navbar-brand ml-2" asp-action="Index" asp-controller="Home" asp-route-category="">Bookstore</a>
+    </div>
+    <div class="m-1 p-1">
+        @RenderBody()
+    </div>
+</body>
+</html>

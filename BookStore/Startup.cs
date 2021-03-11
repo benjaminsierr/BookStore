@@ -31,7 +31,7 @@ namespace BookStore
 
             services.AddDbContext<BookStoreContext>(options =>
            {
-               options.UseSqlite(Configuration["ConnectionStrings:BookStoreConnection"]);
+               options.UseSqlServer($"Server=database-1.ccelvmiio16h.us-east-1.rds.amazonaws.com;Database=BookStore;User Id=admin;Password=group19group");
            });
 
             services.AddScoped<BookStoreRepository, EFBookStoreRepository>();
